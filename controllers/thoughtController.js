@@ -2,7 +2,7 @@ const { ObjectId } = require('mongoose').Types;
 const { User, Thought } = require('../models');
 
 module.exports = {
-//   Get all Thoughts
+//   all Thoughts
   getThoughts(req, res) {
     Thought.find()
       .then((thoughts) => res.json(thoughts))
@@ -14,7 +14,7 @@ module.exports = {
       .select('-__v')
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: 'No thought with that ID' })
+          ? res.status(404).json({ message: 'No thoughts with that ID' })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
@@ -31,7 +31,7 @@ module.exports = {
       })
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No User found with this ID!" })
+          ? res.status(404).json({ message: "No Users found !" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
@@ -45,7 +45,7 @@ module.exports = {
     )
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: 'No thought with this id!' })
+          ? res.status(404).json({ message: 'No thoughts with this id!' })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
@@ -55,7 +55,7 @@ module.exports = {
     Thought.findOneAndDelete({ _id: req.params.thoughtId })
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No thought found with this ID!" })
+          ? res.status(404).json({ message: "No thoughts found with this ID!" })
           : User.findOneAndUpdate(
               { thoughts: req.params.thoughtId },
               { $pull: { thoughts: req.params.thoughtId } },
@@ -78,7 +78,7 @@ module.exports = {
     )
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No thought found with this ID!" })
+          ? res.status(404).json({ message: "No thoughts found with this ID!" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
@@ -92,7 +92,7 @@ module.exports = {
     )
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No thought found with this ID!" })
+          ? res.status(404).json({ message: "No thoughts found with this ID!" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
