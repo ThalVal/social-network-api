@@ -9,7 +9,7 @@
 
 ## Project Description
 
-A social network API created using NoSQL database for a large amount of unstructured data. CRUD functionality can be achieved in Insomnia for Users, Thoughts, Friends, and Reactions. The data is displayed in a formatted JSON and uses Express.js, MongoDB, and MongoODM. Please see attached video for further details and demo.
+A social network API created using NoSQL database for a large amount of unstructured data. CRUD functionality can be achieved in Insomnia for Users, Thoughts, Friends, and Reactions. The data is displayed in a formatted JSON and uses Express.js, MongoDB, and MongoODM. 
 
 
 
